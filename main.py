@@ -1,4 +1,6 @@
 import datetime
+import time
+
 from dateutil.relativedelta import relativedelta
 import weekdays
 import http_request
@@ -16,4 +18,8 @@ def main():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     main()
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print("Elapsed Time: {:.2f} seconds".format(elapsed_time))

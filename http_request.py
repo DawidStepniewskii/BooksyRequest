@@ -37,8 +37,8 @@ def generate_request(booked_from: str) -> List[str]:
 
         response = requests.post(url, headers=headers, data=json.dumps(data))
 
-        if response == 200:
-            available_date.append(booked_from)
+        if response.status_code == 201:
+            available_date.append(date)
 
         progress_bar.update(1)
 
